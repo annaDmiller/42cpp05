@@ -1,0 +1,1 @@
+#include "../includes/Bureaucrat.hpp"

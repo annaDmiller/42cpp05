@@ -2,9 +2,10 @@ CC = c++
 
 CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
-NAME = 
+NAME = ./bureau
 
-SOURCES =
+SOURCES =	./srcs/main.cpp \
+			./srcs/Bureaucrat.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
