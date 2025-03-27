@@ -2,6 +2,7 @@
 
 # include <iostream>
 # include <string>
+# include <exception>
 
 # define MAXGRADE 1
 # define MINGRADE 150
@@ -22,6 +23,18 @@ class Bureaucrat
         int getGrade(void) const;
         void increaseGrade(void);
         void decreaseGrade(void);
+
+    class GradeTooHighException : public std::exception
+    {
+        public:
+            virtual const char* what(void) const throw();
+    };
+
+    class GradeTooLowException : public std::exception
+    {
+        public:
+            virtual const char* what(void) const throw();
+    };
 };
 
 std::ostream &operator<<(std::ostream& out, const Bureaucrat& person);

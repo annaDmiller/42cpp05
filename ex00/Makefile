@@ -1,6 +1,6 @@
 CC = c++
 
-CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -I./includes
 
 NAME = ./bureau
 
