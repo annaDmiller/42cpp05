@@ -7,6 +7,8 @@
 # define MAXGRADE 1
 # define MINGRADE 150
 
+class Form;
+
 class Bureaucrat
 {
     private:
@@ -23,6 +25,8 @@ class Bureaucrat
         int getGrade(void) const;
         void increaseGrade(void);
         void decreaseGrade(void);
+
+        void signForm(Form& form) const;
 
     class GradeTooHighException : public std::exception
     {

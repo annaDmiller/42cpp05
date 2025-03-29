@@ -1,10 +1,12 @@
 CC = c++
 
-CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -I./includes/
 
-NAME = 
+NAME = ./forms
 
-SOURCES =
+SOURCES =	./srcs/main.cpp \
+			./srcs/Form.cpp \
+			./srcs/Bureaucrat.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
