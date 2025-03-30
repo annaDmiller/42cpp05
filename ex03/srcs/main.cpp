@@ -3,85 +3,48 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
+    Intern someRandomIntern;
+    Bureaucrat person("Kevin", 1);
     {
-        AForm *ppf = new PresidentialPardonForm("Test");
-        Bureaucrat person("First", 20);
-        try
-        {
-            person.signForm(*ppf);
-            person.executeForm(*ppf);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-        delete ppf;
+        AForm* rrf;
+
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+        person.signForm(*rrf);
+        person.executeForm(*rrf);
+
+        delete(rrf);
     }
     std::cout << std::endl;
-    std::cout << std::endl;
     {
-        AForm *ppf = new PresidentialPardonForm("Test");
-        Bureaucrat person("First", 20);
-        try
-        {
-            person.executeForm(*ppf);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-        delete ppf;
+        AForm* ppf;
+
+        ppf = someRandomIntern.makeForm("Presidential Pardon", "Bender");
+        person.signForm(*ppf);
+        person.executeForm(*ppf);
+
+        delete(ppf);
     }
     std::cout << std::endl;
-    std::cout << std::endl;
     {
-        AForm *ppf = new PresidentialPardonForm("Test");
-        Bureaucrat person("First", 3);
-        try
-        {
-            person.signForm(*ppf);
-            person.executeForm(*ppf);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-        delete ppf;
+        AForm* scf;
+
+        scf = someRandomIntern.makeForm("SHRUBBERY creation", "Bender");
+        person.signForm(*scf);
+        person.executeForm(*scf);
+
+        delete(scf);
     }
     std::cout << std::endl;
-    std::cout << std::endl;
     {
-        AForm *rrf = new RobotomyRequestForm("Test");
-        Bureaucrat person("First", 30);
-        try
-        {
-            person.signForm(*rrf);
-            person.executeForm(*rrf);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-        delete rrf;
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-    {
-        AForm *scf = new ShrubberyCreationForm("Test");
-        Bureaucrat person("First", 130);
-        try
-        {
-            person.signForm(*scf);
-            person.executeForm(*scf);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-        delete scf;
+        AForm* other;
+
+        other = someRandomIntern.makeForm("Presidential request", "Bender");
+        if (other == NULL)
+            std::cerr << "Nothing to be signed and executed." << std::endl;
     }
     return (0);
 }

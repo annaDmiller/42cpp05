@@ -1,10 +1,16 @@
 CC = c++
 
-CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -I./includes
 
-NAME = 
+NAME = intern
 
-SOURCES =
+SOURCES =	./srcs/main.cpp \
+			./srcs/AForm.cpp \
+			./srcs/Bureaucrat.cpp \
+			./srcs/Intern.cpp \
+			./srcs/PresidentialPardonForm.cpp \
+			./srcs/RobotomyRequestForm.cpp \
+			./srcs/ShrubberyCreationForm.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
